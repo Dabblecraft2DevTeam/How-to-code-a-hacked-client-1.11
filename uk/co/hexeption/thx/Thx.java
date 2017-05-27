@@ -6,6 +6,7 @@ import uk.co.hexeption.thx.event.EventTarget;
 import uk.co.hexeption.thx.event.events.EventKeyboard;
 import uk.co.hexeption.thx.module.Module;
 import uk.co.hexeption.thx.module.ModuleManager;
+import uk.co.hexeption.thx.tab.TabGui;
 import uk.co.hexeption.thx.ttf.FontManager;
 import uk.co.hexeption.thx.ui.Hud;
 
@@ -28,14 +29,18 @@ public class Thx {
 
     public final Hud HUD = new Hud();
 
+    public final TabGui TAB = new TabGui();
+
     public void startClient() {
 
         EventManager.register(this);
         FONT_MANAGER.loadFonts();
 
 
+
+
         //Ends Client
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> endClient()));
+        Runtime.getRuntime().addShutdownHook(new Thread(this::endClient));
     }
 
     public void endClient() {
