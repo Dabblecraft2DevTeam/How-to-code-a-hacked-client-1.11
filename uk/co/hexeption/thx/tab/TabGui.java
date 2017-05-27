@@ -72,10 +72,10 @@ public class TabGui {
                     color = -1;
                 }
 
-                int y = tabHeight + (modCount * 15); // This should fix that bug
+                int y = tabHeight + (modCount * 15);
                 GLUtils.glColor(new Color(47, 47, 47, 230).hashCode());
                 GLUtils.drawRect(73, y, 100 + this.getLongestModuleWidth(), y + 15);
-                Thx.INSTANCE.FONT_MANAGER.arraylist.drawCenteredStringWithShadow(!module.getName().equalsIgnoreCase(this.getModsForCategorys().get(this.selectedMods).getName()) ? module.getName() : "> " + module.getName(), Thx.INSTANCE.FONT_MANAGER.arraylist.getStringWidth(module.getName()) / 2 + 80, y + 8, color);
+                Thx.INSTANCE.FONT_MANAGER.arraylist.drawCenteredStringWithShadow(!module.getName().equalsIgnoreCase(this.getModsForCategorys().get(this.selectedMods).getName()) ? module.getName() : "> " + module.getName(), Thx.INSTANCE.FONT_MANAGER.arraylist.getStringWidth(module.getName()) / 2 + 80 , y + 6, color);
                 modCount++;
             }
         }
